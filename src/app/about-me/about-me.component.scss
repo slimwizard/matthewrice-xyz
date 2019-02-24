@@ -1,0 +1,16 @@
+.wave {
+    display: inline-block;
+    animation: wave .5s infinite linear;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(27deg);
+    }
+    100% {
+        transform: rotate(0deg);
+      }
+  }

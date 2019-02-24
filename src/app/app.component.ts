@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'matthewrice-xyz';
+
+  navLinks = [{route: '/about', label: "About"},
+              {route: '/contact', label: "Contact"},
+              {route: '/projects', label: "Projects"}
+  ]
+
+
 }
