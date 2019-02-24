@@ -2,10 +2,13 @@
 <div style="text-align:center">
     <mat-toolbar>
         <span>Matthew Rice</span>
+        <div style="display: inline; text-align: right; width: 100%">
+            <img src="../assets/face.png" alt="Picture of me" class="face">
+        </div>
       </mat-toolbar>
   
   <div style="text-align: right;">
-      <nav mat-tab-nav-bar style="text-align: right; ">
+      <nav mat-tab-nav-bar>
           <a mat-tab-link
              *ngFor="let link of navLinks"
              [routerLink]="link.route"
