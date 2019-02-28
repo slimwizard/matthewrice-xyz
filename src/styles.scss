@@ -1,12 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-h3, p, span, button, h5, a {
+h3, p, button, h5, a {
     font-family: 'Roboto Mono', monospace;
+}
+
+.main-content {margin: 1em;  align-content: center;}
+
+.header-title {
+    font-size: 30px;
+    color: rgb(192, 189, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+//   text-shadow: 4px 4px 4px #aaa;
+    font-family: 'Faster One';
 }
 
 h1, h2, h4 {
     font-family: 'PT Serif', serif;
+}
+
+span {
+    text-shadow: 4px 4px 4px #aaa;
 }
 
 a:link {
@@ -24,3 +38,10 @@ a:link {
   a:active {
     text-decoration: none;
   }
+  html, body { height: 100%; overflow: hidden; } 
+  body {margin: 0;}
+
+router-outlet ~ * {
+    position: absolute;
+    height: 100%;
+}

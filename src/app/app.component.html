@@ -1,7 +1,7 @@
 
-<div style="text-align:center">
+<div>
     <mat-toolbar>
-        <span><strong>Matthew Rice</strong></span>
+        <span class="header-title"><strong>Matthew Rice</strong></span>
         <div style="display: inline; text-align: right; width: 100%">
             <img src="../assets/face.png" alt="Picture of me" class="face">
         </div>
@@ -18,8 +18,9 @@
           </a>
         </nav>
   </div>
-  
-
-
 </div>
-<router-outlet></router-outlet>
+
+<div style="margin-right: 1em;" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" >
+    <router-outlet #o="outlet"></router-outlet>
+</div>
+
