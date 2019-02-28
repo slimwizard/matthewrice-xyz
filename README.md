@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running production verion in Docker Container with Nginx
 
-First you will need to do a production build of the project using `ng build --prod`. This will put the prod files in the /dist directory. Next, you will need to create a new image using the Dockerfile by running `docker build -t matthewrice-xyz .`. Now, the container can be started up by running `docker run -d -p8080:80 matthewrice-xyz`. Visiting localhost:8080 in the browser will hit port 80 in the container, which is now serving the compiled Angular application from an Nginx web server.
+First (after pulling the repo, of course), run a production build of the project using `ng build --prod`. This will put the production-ready files in the /dist directory. Next, create a new image using the Dockerfile by running `docker build -t matthewrice-xyz .`. Now, the container can be started up by running `docker run -d -p8080:80 matthewrice-xyz`. Visiting localhost:8080 in the browser will hit port 80 in the container, which is now serving the compiled Angular application from an Nginx web server.
 
 ## Development server
 
