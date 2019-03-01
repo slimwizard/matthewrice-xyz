@@ -48,9 +48,11 @@ import {
 export class AppComponent {
   title = 'matthewrice-xyz';
 
-  navLinks = [{route: '/about', label: "  About      "},
-              {route: '/contact', label: "Contact"},
-              {route: '/projects', label: "Projects"}
+  navLinks = [{ route: '/about', label: "  About      "},
+              { route: '/contact', label: "Contact"},
+              { route: '/projects', label: "Projects"}
+              // ,
+              // { route: '/blog', label: "Blog"}
   ]
 
 

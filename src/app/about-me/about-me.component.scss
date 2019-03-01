@@ -14,3 +14,62 @@
         transform: rotate(0deg);
       }
   }
+
+
+
+#interests {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    background: linear-gradient(to bottom, #b5beff 0%, #ffffff 100%);
+    // background-color: rgb(193, 197, 255);
+    color: black;
+    text-align: center;
+    color: white;
+    border-top: #000000;
+    height: 800px;
+
+
+}
+
+#interests::before {
+    background-image: linear-gradient(to top, #ffffff 0%, #3a4ed5 100%);
+}
+
+#interests-text { 
+    color: linear-gradient(to top, #000000 0%, #ffffff 100%);
+    color: linear-gradient(to bottom, #3acfd5 0%, #ffffff 100%);
+}
+
+#more-content {
+    padding-top: 10px;
+    background: linear-gradient(to top, #b5beff 0%, #ffffff 100%);
+    margin-top: -1em;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+
+#mobile-line {
+    visibility: hidden;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+
+    #more-content {
+        margin-top: -36em;
+        background-image: none;
+    }
+
+    #mobile-line {
+        visibility: visible;
+    }
+    
+}

@@ -9,9 +9,14 @@
 
     padding-top: 50px;
     padding-left: 8px;
+}
 
-
-
+.header-title {
+    font-size: 28px;
+    color: rgb(192, 189, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+//   text-shadow: 4px 4px 4px #aaa;
+    font-family: 'Faster One';
 }
 
 .mat-tab-link {
@@ -20,4 +25,8 @@
 
 .mat-tab-link:first-of-type {
     padding: 0 22px;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #b3bfff;
 }
