@@ -20,13 +20,15 @@
 #interests {
     padding-top: 10px;
     padding-bottom: 15px;
-    background: linear-gradient(to bottom, #b5beff 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #b5beff 70%, #ffffff 100%);
     // background-color: rgb(193, 197, 255);
     color: black;
     text-align: center;
     color: white;
-    border-top: #000000;
-    height: 800px;
+    border-top: 5px #000000;
+    height: 105%;
+
+    
 
 
 }
@@ -44,7 +46,10 @@
     padding-top: 10px;
     background: linear-gradient(to top, #b5beff 0%, #ffffff 100%);
     margin-top: -1em;
+    height: 115%;
 }
+
+
 
 
 .grid {
@@ -64,12 +69,16 @@ and (orientation : portrait) {
 /* Styles */
 
     #more-content {
-        margin-top: -36em;
+        // margin-top: -36em;
         background-image: none;
     }
 
     #mobile-line {
         visibility: visible;
+    }
+
+    #interests {
+        height: 105%;
     }
     
 }
