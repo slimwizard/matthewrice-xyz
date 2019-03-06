@@ -7,6 +7,7 @@ h3, p, button, h5, a {
 
 .main-content {  align-content: center; text-align: center;}
 
+body {min-width: 100%;}
 
 
 h1, h2, h4 {
@@ -33,11 +34,13 @@ a:link {
     text-decoration: none;
   }
   html, body { height: 100%;  } 
-  body {margin: 0;}
+  body {margin: 0; overflow: hidden;}
 
 router-outlet ~ * {
     position: absolute;
     height: 100%;
+    width: 100%;
+    overflow:hidden;
 }
 
 // .mat-tab-label, .mat-tab-link {
