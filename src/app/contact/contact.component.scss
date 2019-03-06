@@ -9,7 +9,7 @@
 
 #right-circle {
 
-    animation: moveleft 2s, rotate 4s linear infinite;
+    animation: moveleft 2s, spin-scale 4s linear infinite;
 
 }
 
@@ -41,14 +41,14 @@ and (orientation : portrait) {
     }
   }
 
-  @keyframes rotate {
-    0% {
-        transform:rotate(0);
+  @keyframes spin-scale { 
+    50%{
+        transform: rotate(360deg) scale(2);
     }
-    100% {
-        transform:rotate(360deg);
-    }
-  }
+    100% { 
+        transform: rotate(720deg) scale(1);
+    } 
+}
 
   @keyframes moveleft {
     0% {
