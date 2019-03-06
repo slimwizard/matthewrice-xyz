@@ -43,7 +43,7 @@ and (orientation : portrait) {
 
   @keyframes spin-scale { 
     50%{
-        transform: rotate(360deg) scale(2);
+        transform: rotate(360deg) scale(1.2);
     }
     100% { 
         transform: rotate(720deg) scale(1);
