@@ -70,7 +70,8 @@
     border-radius: 50%;
     
     box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
-    background-image: linear-gradient(to  right, rgb(227, 133, 255),rgb(255, 255, 255))
+    background-image: linear-gradient(to  right, rgb(227, 133, 255),rgb(255, 255, 255));
+    animation: rotate 4s infinite  linear;
 }
 
 mat-card {
