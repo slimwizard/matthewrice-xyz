@@ -3,6 +3,9 @@
     animation: wave .5s infinite linear;
   }
 
+#resume a {
+    font-family: 'Bungee Hairline', cursive;
+}
   @keyframes wave {
     0% {
       transform: rotate(0deg);
@@ -61,16 +64,14 @@
 #interests {
     padding-top: 10px;
     padding-bottom: 15px;
-    background: linear-gradient(to bottom , #6bb0ff63 60%, #ffffff 100%);
+    background: linear-gradient(to bottom , #8b26ff , #1e22ff );
     // background-color: rgb(193, 197, 255);
     color: black;
     text-align: center;
     color: white;
     border-top: 5px #000000;
-    height: 400px;
     margin-top: 0;
-    overflow:auto;
-    border-radius: 5px 5px 0px 0px; 
+
 }
 
 
@@ -80,10 +81,10 @@
     to   { opacity: 1; }
 }
 
-#interests-text > p {
+#interests p {
     margin-top: .5em;
-    color: rgb(61, 61, 61);
-    text-shadow: 2px 2px white;
+    font-weight: bold;
+    color: rgb(255, 249, 249);
 
 }
 
@@ -93,21 +94,21 @@
 
 }
 
-#more-content-text > p {
-    margin-top: 0;
+#more-content p{
+    margin-top: 1em;
     -webkit-animation: flip-in-hor-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: flip-in-hor-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-#interests-text { 
+#interests{ 
     color: linear-gradient(to top, #000000 0%, #ffffff 100%); 
     
 }
 
 #more-content {
+    background: linear-gradient(to top , #8b26ff , #1e22ff );
+    color:white;
     padding-top: 10px;
-    background: linear-gradient(to top,  #6bb0ff63  0%, #ffffff 100%);
-
     margin-top: 0;
     font-family: 'PT Serif', serif;
 }
@@ -140,20 +141,22 @@ and (orientation : portrait) {
     }
 
     #more-content {
-        // margin-top: -36em;
+        color: rgb(51, 51, 51);
+        margin-top: .5em;
         background-image: none;
-        margin-top: -1em;
-        
     }
 
+    #more-content p{
+        margin-top: 0;
+    }
+
+
     #mobile-line {
+        margin-top: 1em;
+        margin-bottom: -1em;
         visibility: visible;
     }
 
-    #interests {
-        height: 100%;
-        overflow: auto;
-    }
 
     #name-content {
         text-align: left;
@@ -164,25 +167,29 @@ and (orientation : portrait) {
         padding-bottom: 15px;
     }
 
-    #more-content-text > p {
+    #more-content p {
         
         margin-top: 2em;
-        font-size: 80%;
         border: 5px #000000 5px;
     }
 
-    #interests-text > p {
-        margin-top: .2em;
+    
+
+    #interests p {
+        margin-top:1em;
     }
 
     #divider-container {
         margin-left: 16%;
+        margin-top:1em;
+        margin-bottom:-1em;
+        width: 68%
     }
 
     mat-divider {
         text-align: center;
         visibility: visible;
-        width: 80%
+        
     }
 }
 
