@@ -3,8 +3,8 @@
     animation: wave .5s infinite linear;
   }
 
-#resume {
-    margin-bottom: 10em;
+#blog-container {
+    margin-bottom: 0em;
 }
 
 #resume a {
@@ -120,9 +120,75 @@
 
 
 
-.grid {
+.top-grid {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+
+.bottom-grid {
+    margin:0 170px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+}
+
+.resume-grid {
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: .2fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "icon text"
+        "icon text";
+    justify-items: center;
+    align-items: center;
+}
+
+#resume-icon {
+    grid-area: icon;
+    width: 40px;
+  }
+#resume-text {
+    text-align:left;
+    grid-area: text;
+}
+
+#resume-text h2 {
+    text-decoration: underline;  
+    text-decoration-color: rgb(245, 129, 255);
+    text-align:left;
+
+}
+
+.blog-grid {
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: .2fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "icon text"
+        "icon text";
+    justify-items: center;
+    align-items: center;
+}
+
+#blog-icon {
+    grid-area: icon;
+    width: 40px;
+  }
+#blog-text {
+    
+    text-align:left;
+    grid-area: text;
+}
+
+#blog-text h2 {
+    text-decoration: underline;
+  text-decoration-color: rgb(245, 129, 255);
+    text-align:left;
+
 }
 
 #mobile-line {
@@ -133,12 +199,28 @@ mat-divider {
     visibility: hidden;
 }
 
+u {
+    color:purple;
+}
+
+u::after {
+    color:black;
+}
+
 /* iPads (portrait) ----------- */
 @media only screen 
 
 and (max-device-width : 767px) 
 and (orientation : portrait) {
 /* Styles */
+
+.bottom-grid {
+    margin:0;
+}
+
+#blog-container {
+    margin-bottom: 10em;
+}
 
     #hi-text {
         text-align: left;
