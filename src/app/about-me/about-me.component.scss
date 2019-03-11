@@ -1,6 +1,8 @@
-.wave {
+#wave {
     display: inline-block;
     animation: wave .5s infinite linear;
+    opacity: 0;
+    transition: opacity 1000ms;
   }
 
 #blog-container {
@@ -131,7 +133,7 @@
     justify-items: center;
     align-items: center;
 
-    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(330px, 1fr) );
 }
 
 .resume-grid {
@@ -155,12 +157,7 @@
     grid-area: text;
 }
 
-#resume-text h2 {
-    text-decoration: underline;  
-    text-decoration-color: rgb(245, 129, 255);
-    text-align:left;
 
-}
 
 .blog-grid {
     padding-left: 15px;
@@ -184,12 +181,7 @@
     grid-area: text;
 }
 
-#blog-text h2 {
-    text-decoration: underline;
-  text-decoration-color: rgb(245, 129, 255);
-    text-align:left;
 
-}
 
 #mobile-line {
     visibility: hidden;
@@ -199,13 +191,20 @@ mat-divider {
     visibility: hidden;
 }
 
-u {
-    color:purple;
+.card-text {
+    text-shadow: 2px 1px 2px rgb(63, 63, 63);
+    color: white;
+    text-align:left;
+}
+mat-card {
+    background: linear-gradient(to bottom , rgb(225, 225, 255) , rgb(174, 174, 255));
+    width: 300px;
+    // background-color: rgb(225, 225, 255);
 }
 
-u::after {
-    color:black;
-}
+
+
+
 
 /* iPads (portrait) ----------- */
 @media only screen 
@@ -218,7 +217,7 @@ and (orientation : portrait) {
     margin:0;
 }
 
-#blog-container {
+#globe-container {
     margin-bottom: 10em;
 }
 
