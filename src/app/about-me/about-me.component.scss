@@ -202,6 +202,17 @@ mat-card {
     // background-color: rgb(225, 225, 255);
 }
 
+#tech-divider {
+    visibility: visible;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#tech-used {
+    margin: 2%;
+}
 
 
 
@@ -213,13 +224,13 @@ and (max-device-width : 767px)
 and (orientation : portrait) {
 /* Styles */
 
-.bottom-grid {
-    margin:0;
-}
+    .bottom-grid {
+        margin:0;
+    }
 
-#globe-container {
-    margin-bottom: 10em;
-}
+    #tech-used {
+        margin-bottom: 10em;
+    }
 
     #hi-text {
         text-align: left;
