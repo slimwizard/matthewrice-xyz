@@ -2,15 +2,17 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 h3, p, button, h5 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-family: 'Roboto';
 }
 
 
 
-.roboto p, h2, h3, a {
+.roboto p, h2, h3, a, li {
   font-family: 'Roboto Mono', sans-serif;
 }
+
+
+
 
 .main-content {  align-content: center; text-align: center;}
 

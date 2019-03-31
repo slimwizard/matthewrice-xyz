@@ -1,0 +1,40 @@
+
+.blog-page-content {
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 2em;
+}
+
+.blog-header {
+    margin: 7px;
+}
+
+.blog-secondary-info {
+    text-align: left;
+    font-family: 'Roboto Mono';
+    font-size: 13px;
+    padding-left: 2em;
+    margin-top: -1em;
+    color: rgb(160, 160, 160);
+}
+
+.blog-title {
+    text-align: left;
+    max-width: 475px;
+}
+
+.blog-image {
+    text-align: center;
+}
+
+@media only screen 
+
+and (max-device-width : 790px) 
+and (orientation : portrait) {
+    .blog-page-content {
+        margin-left: .5em;
+        margin-right: .5em;
+        margin-top: 1em;
+    }
+
+}

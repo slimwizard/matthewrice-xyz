@@ -25,6 +25,11 @@ export class AboutMeComponent implements OnInit {
     setTimeout(()=>{this.sayHello()}, 100)
   }
 
+  navigateTo(url) {
+    window.location.href = url
+
+  }
+
   ngOnInit() {
     setTimeout(() => {
       this.sayHello()

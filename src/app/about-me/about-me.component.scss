@@ -129,6 +129,7 @@
 
 .bottom-grid {
     margin:0 170px;
+    margin-bottom: 10px;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -187,9 +188,7 @@
     visibility: hidden;
 }
 
-mat-divider {
-    visibility: hidden;
-}
+
 
 .card-text {
     text-shadow: 2px 1px 2px rgb(63, 63, 63);
@@ -210,8 +209,21 @@ ul {
     list-style-type: none;
 }
 
-#tech-used {
-    margin: 2%;
+li {
+    margin-left: -40px;
+}
+
+.tech-used {
+    margin: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 4px;
+    width: 100px;
+    background-color: #5dff8d;
+    color: rgb(136, 136, 136);
+    border-radius: 4px;
+    text-shadow: none;
+
 }
 
 
@@ -224,12 +236,17 @@ and (max-device-width : 767px)
 and (orientation : portrait) {
 /* Styles */
 
+    .tech-used {
+        margin-left: 4px;
+    }
+
     .bottom-grid {
         margin:0;
+        margin-bottom: 10px;
     }
 
     #tech-used {
-        margin-bottom: 10em;
+        margin-bottom: 5em;
     }
 
     #hi-text {
