@@ -1,5 +1,5 @@
 
-.blog-page-content {
+#blog-page-content {
     margin-left: 6em;
     margin-right: 6em;
     margin-top: 2em;
@@ -31,7 +31,7 @@
 
 and (max-device-width : 790px) 
 and (orientation : portrait) {
-    .blog-page-content {
+    #blog-page-content {
         margin-left: .5em;
         margin-right: .5em;
         margin-top: 1em;

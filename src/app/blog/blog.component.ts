@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BlogService } from './blog-service/blog.service'
+import { BlogService } from './blog-service/blog.service'
 
 @Component({
   selector: 'app-blog',
@@ -9,11 +9,12 @@ import {BlogService } from './blog-service/blog.service'
 export class BlogComponent implements OnInit {
 
   blog
-  
+
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
     this.blog = this.blogService.blogPosts[0]
+    
   }
 
-}
+  }
