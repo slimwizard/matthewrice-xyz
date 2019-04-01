@@ -32,8 +32,22 @@ export class BlogService {
           mining data (known as the KDD process), but I have never tackled a real-world problem like this before. And as programmers, we are all about reusing and repurposing code as opposed to reinventing the wheel. So, the search for an open-source, pre-trained model was on.</p>\
          <p>To make a long story short, none of the open source object detection models I could find were anywhere near accurate enough for this use case. \
          They just didn't lend themselves to the angles at which the images were being captured. Below is an image of the parking lot taken from the Raspberry Pi:</p> \
-         <div class='blog-image'><img width='300px' height='400px' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/rain.jpg'/></div> \
-         <p>As you can see, the view of the cars is not quite top-down but not quite head-on either; it is somewhere in between, and the two pre-trained models I found were only accurate when dealing with the two extremes. Of course, a fully top-down, bird's eye view of the lot would be ideal in all cases, as it would allow for all of the spots and vehicles to be uniform in size and angle. Capturing images at the angle shown above causes more than a few problems, all of which stemming from fact that both the size of the spots/vehicles and the angle at which they are captured change as you move towards the edges of the image. But, without roof-access to a <i>really </i> tall building adjacent to a parking lot on campus, I was forced into flexing my wrinkled, wet brain muscles and finding another solution.</p>\
+         <div class='blog-image'><img width='300px' height='400px' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/rain.jpg'/><p class='image-desc'>A rainy day in Ruston, Louisiana.</p></div> \
+         <p>As you can see, the view of the cars is not quite top-down but not quite head-on either; it is somewhere in between, and the two pre-trained models I found were only accurate when dealing with the two extremes. Of course, a fully top-down, bird's eye view of the lot would be ideal in all cases, as it would allow for all of the spots and vehicles to be uniform in size and angle. Capturing images at the angle \
+          shown above causes more than a few problems for an object detection model, all of which stemming from fact that both the size of the spots/vehicles and the angle at which they are captured change as you move towards the edges of the image. But, without roof-access to a <i>really </i> tall building adjacent to a parking lot on campus, I was forced into flexing my wrinkled, wet brain muscles and finding another solution. \
+          </p>\
+          <p>With the Pi on the roof, I knew that starting my own data collection process would be as easy as writing a script to automate the capturing and storing of an image and running said script every 30 minutes with a cron job. \
+          The following BASH script (camera_script.sh) seemed to do the trick: </p> \
+          <div class='code-block'> \
+          <code> \
+          #!/bin/bash </br> \
+          DATE=`date +%Y-%m-%d-%I\:%M%p` </br>\
+          raspistill -o /home/pi/lot_images/$DATE.jpg </br>\
+          \
+          </code> \
+          </div> \
+          <p>And setting is to run every 30 minutes was as easy as creating a crontab process by running <code class='inline-code'>crontab -e</code> in the terminal, placing the following line into the editor, and saving the file:</p> \
+          <div class='code-block'><code>*/30 * * * * /home/pi/camera_script.sh</code></div>\
          <p><i>To Be Continued...</i></p> \
          " 
 

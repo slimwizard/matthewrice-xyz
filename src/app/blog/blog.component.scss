@@ -27,6 +27,25 @@
     text-align: center;
 }
 
+.code-block {
+    background-color: rgb(243, 243, 243);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.inline-code {
+    background-color: rgb(243, 243, 243);
+}
+
+.image-desc {
+    margin-top: -5px;
+    size: 5px;
+    font-style: italic;
+    font-family: 'Roboto Mono';
+    color: rgb(160, 160, 160);
+    font-size: 13px;
+}
+
 @media only screen 
 
 and (max-device-width : 790px) 
