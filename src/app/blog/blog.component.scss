@@ -31,6 +31,8 @@
     background-color: rgb(243, 243, 243);
     border-radius: 4px;
     padding: 10px;
+    align-content: center;
+    text-align: left;
 }
 
 .inline-code {
@@ -44,6 +46,17 @@
     font-family: 'Roboto Mono';
     color: rgb(160, 160, 160);
     font-size: 13px;
+    max-width: 500px;
+    margin:0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.description-box {
+    align-items: center;
+    margin:0 auto;
 }
 
 @media only screen 
