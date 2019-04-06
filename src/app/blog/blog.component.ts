@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { BlogService } from './blog-service/blog.service'
+import { BlogService, BlogPost } from './blog-service/blog.service'
 
 @Component({
   selector: 'app-blog',
@@ -9,13 +9,20 @@ import { BlogService } from './blog-service/blog.service'
 })
 export class BlogComponent implements OnInit {
 
-  blog
+  blogs: BlogPost[]
+  blogSelected: boolean
+  selectedBlog: BlogPost
 
   constructor(private blogService: BlogService) { }
 
+  selectBlog(title: string): void {
+    this.selectedBlog = this.blogService.getBlog(title)
+    this.blogSelected = true
+    window.scroll(0,0);
+  }
+
   ngOnInit() {
-    this.blog = this.blogService.blogPosts[0]
-    
+    this.blogs = this.blogService.getBlogs()
   }
 
   }

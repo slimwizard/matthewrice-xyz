@@ -11,6 +11,25 @@ h3, p, button, h5 {
   font-family: 'Roboto Mono', sans-serif;
 }
 
+.emoji {
+  padding-top: 5px;
+  width: 35px;
+  height: 35px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.emoji-note {
+  padding-top: 5px;
+  width: 32px;
+  height: 32px;
+}
+
+.emoji-tv {
+  padding-top: 5px;
+  width: 28px;
+  height: 28px;
+}
+
 
 
 
@@ -18,12 +37,11 @@ h3, p, button, h5 {
 
 
 h1, h2, h4 {
-    font-family: 'Bungee Hairline', cursive;
+    font-family: 'Corben', cursive;
     text-emphasis: bold;
 }
 
 span {
-    text-shadow: 4px 4px 4px #aaa;
 }
 
 a:link {
@@ -47,6 +65,7 @@ a:link {
 router-outlet ~ * {
     position: absolute;
     width: 100%;
+    align-content: center;
     overflow-x:hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;

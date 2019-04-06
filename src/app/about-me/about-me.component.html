@@ -1,6 +1,7 @@
 <div class="main-content">
   <div id="hi-text">
-    <h2 id="hi-text-2"> {{hello}} <span id="wave">👋</span></h2>
+    <h3 id="hi-text-3" style="z-index: 2">     {{hello}} <span id="wave"><img class='emoji' src="../../assets/wave-emoji.png" style=" z-index: -2px;"></span></h3>
+    <!-- <h2 id="hi-text-2"> {{hello}} <span id="wave">👋</span></h2> -->
   </div>
 
   <div id="name-content" class="roboto">
@@ -43,20 +44,45 @@
     </div> -->
     
   </div>
-  <div style="margin-bottom: 10px;">
-    <h2>Check out my Github!</h2>
-    <img src="../assets/github.png" style="height: 25px; width: 25px;" alt=""> 
-    <a href="http://www.github.com/slimwizard">
-      <div style="display: inline;">slimwizard</div>
-    </a>
-  </div>
+  <div class="bottom-grid-current">
+      <div id="currently-reading" class="current">
+          <h2 class="current-title"><img src="../../assets/books-emoji.png" class="emoji">Reading:</h2>
+          <mat-divider></mat-divider>
+          <!-- <h2>📚Currently Reading:</h2> -->
+          <ul>
+            <li><a href="https://www.amazon.com/Catcher-Rye-J-D-Salinger/dp/0316769487">> The Catcher in the Rye</a></li>
+            <li><a href="https://www.amazon.com/Serious-Python-Black-Belt-Deployment-Scalability/dp/1593278780/ref=sr_1_fkmrnull_1?keywords=Serious+Python%3A+Black-Belt+Advice+on+Deployment%2C+Scalability%2C+Testing%2C+and+More&qid=1554131337&s=books&sr=1-1-fkmrnull">> Serious Python: Black-Belt Advice on Deployment, Scalability, Testing, and More</a></li>
+          </ul>
+      </div>
+      <div id="currently-reading" class="current">
+          <h2 class="current-title"><img class="current-title" src="../../assets/tv-emoji.png" class="emoji-tv"> Watching:</h2>
+          <mat-divider></mat-divider>
+          <!-- <h2>🎵Currently Jamming:</h2> -->
+          <ul>
+            <li><a href="https://en.wikipedia.org/wiki/The_OA">> The OA</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Game_of_Thrones">> Game of Thrones</a></li>
+          </ul>
+      </div>
+      <div id="currently-reading" class="current">
+          <h2 class="current-title"><img src="../../assets/music-note-emoji.png" class="emoji-note">Jamming:</h2>
+          <mat-divider></mat-divider>
+          <!-- <h2>🎵Currently Jamming:</h2> -->
+          <ul>
+            <li><a href="https://en.wikipedia.org/wiki/The_Hits/The_B-Sides">> Prince - The Hits/B-sides</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Wowee_Zowee">> Pavement - Wowee Zowee</a></li>
+          </ul>
+      </div>
+      
+    </div>
+    <mat-divider></mat-divider>
+  
   <div class="bottom-grid">
+      
     <div class="resume">
       <div id="resume-container">
         <div id="resume">
           <mat-card style=" margin:10px 20px; max-width: 370px; ">
             <div class="resume-grid">
-
               <svg id="resume-icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000"
                 enable-background="new 0 0 1000 1000" xml:space="preserve">
@@ -82,40 +108,39 @@
               </svg>
               <a href="https://s3.us-east-2.amazonaws.com/matthewrice-xyz/resume_final.pdf">
                 <div id="resume-text" style="text-align:left;">
-                  <h2 class="card-text">While you're here, have a look at my resume</h2>
+                  <h3 class="card-text">While you're here, have a look at my resume</h3>
                 </div>
               </a>
-
             </div>
-
           </mat-card>
-
         </div>
-
       </div>
-
     </div>
-
-
-    
-
-
   </div>
+  <div class="resume">
+      
+            <div >
+            
+              <img src="../../assets/github.png" width="40px" height="40px">
+              <a href="https://www.github.com/slimwizard">
+                <div id="resume-text" style="text-align:left;">
+                  <h3 class="card-text-git" style="text-align: center; margin-top: -3px;">Check out my Github</h3>
+                </div>
+              </a>
+            </div>
+    </div>
+  
   <mat-divider id="tech-divider"></mat-divider>
   <div class='robot' id="tech-used">
     <p style="margin-bottom: -10px;">This website was made using the following technologies:</p>
-    
+    <div class='tech-button-container'>
         <button class="tech-used" (click)='navigateTo("https://angular.io/")'>Angular</button>
         <button class="tech-used" (click)='navigateTo("https://aws.amazon.com/s3/")'>AWS S3</button>
-        
         <button class="tech-used" (click)='navigateTo("https://www.typescriptlang.org/")'>Typescript</button>
         <button class="tech-used" (click)='navigateTo("https://www.w3schools.com/html/html5_intro.asp")'>HTML5/CSS3</button>
         <button class="tech-used" (click)='navigateTo("https://firebase.google.com/")'>Firebase</button>
         <button class="tech-used" (click)='navigateTo("https://aws.amazon.com/route53/")'>AWS Route53</button>
         <button class="tech-used" (click)='navigateTo("https://git-scm.com/")'>Git</button>
-      
+      </div>
   </div>
-
-
-
 </div>

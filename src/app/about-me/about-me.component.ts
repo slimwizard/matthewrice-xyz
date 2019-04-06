@@ -9,7 +9,7 @@ export class AboutMeComponent implements OnInit {
 
   constructor() { }
 
-  helloText = ['h', 'e', 'l', 'l', 'o', ', ', 'w', 'o', 'r', 'l', 'd', '!']
+  helloText = ['H', 'E', 'L', 'L', 'O', ', ', 'W', 'O', 'R', 'L', 'D', '!']
   index = 0
   hello = ''
 

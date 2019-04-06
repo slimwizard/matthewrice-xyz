@@ -1,19 +1,36 @@
 <div id="blog-page-content">
+  <div *ngIf="blogSelected">
 
 
-  <div class="blog-header">
-    <h2 class="blog-title">{{blog.title}}</h2>
-    <p class="blog-secondary-info">🗓 {{blog.date}}</p>
-    <p class="blog-secondary-info">📓 {{blog.tags}}</p>
-    <p class="blog-secondary-info">⏱ <i>{{blog.readTime}}</i> read</p>
-    <mat-divider></mat-divider> 
+    <div class="blog-header">
+      <h2 class="blog-title">{{selectedBlog.title}}</h2>
+      <p class="blog-secondary-info">🗓 {{selectedBlog.date}}</p>
+      <p class="blog-secondary-info">📓 {{selectedBlog.tags}}</p>
+      <p class="blog-secondary-info">⏱ <i>{{selectedBlog.readTime}}</i> read</p>
+      <mat-divider></mat-divider>
 
+
+    </div>
+    <div style="margin: 1em" [innerHTML]="selectedBlog.content"></div>
+    <button mat-button style="color:rgb(137, 137, 255)" (click)='blogSelected=False'> < Back</button>
+
+    
 
   </div>
 
-
-  <div style="margin: 1em" [innerHTML]="blog.content">
-
+  <div *ngIf="!blogSelected">
+    <div *ngFor="let blog of blogs" class="blog-teaser">
+        <div class="blog-header">
+            <h2 class="blog-title">{{blog.title}}</h2>
+            <p class="blog-secondary-info">🗓 {{blog.date}}</p>
+            <p class="blog-secondary-info">📓 {{blog.tags}}</p>
+            <p class="blog-secondary-info">⏱ <i>{{blog.readTime}}</i> read</p>
+            <mat-divider></mat-divider>
+      
+      
+          </div>
+          <div style="margin: 1em" [innerHTML]="blog.content.substring(0, 300) + '...'"></div><div class="blog-button-container"><button style="color:rgb(137, 137, 255)" class="blog-secondary-info" mat-button (click)='selectBlog(blog.title)'>Continue Reading ></button></div>
+          
+    </div>
   </div>
-
 </div>

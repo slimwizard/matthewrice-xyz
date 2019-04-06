@@ -3,6 +3,7 @@
     margin-left: 6em;
     margin-right: 6em;
     margin-top: 2em;
+    text-align: left;
 }
 
 .blog-header {
@@ -20,11 +21,18 @@
 
 .blog-title {
     text-align: left;
-    max-width: 475px;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.blog-image-container {
+    text-align: center;
 }
 
 .blog-image {
-    text-align: center;
+
+    max-width: 100%;
+
 }
 
 .code-block {
@@ -50,14 +58,20 @@
     margin:0 auto;
 }
 
-img {
-    max-width: 100%;
-}
-
 .description-box {
     align-items: center;
     margin:0 auto;
 }
+
+.blog-teaser {
+    margin-bottom: 50px;
+}
+
+button {
+    color: blue; 
+}
+
+
 
 @media only screen 
 
@@ -67,6 +81,11 @@ and (orientation : portrait) {
         margin-left: .5em;
         margin-right: .5em;
         margin-top: 1em;
+    }
+
+    .blog-button-container {
+        text-align: right;
+        margin-right: 1em;
     }
 
 }

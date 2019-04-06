@@ -8,7 +8,7 @@ export class BlogService {
   constructor() { }
 
 
-  blogPosts = [
+  blogPosts: BlogPost[] = [
 
     {
 
@@ -24,7 +24,7 @@ export class BlogService {
         <p>Time and time again we are faced with the same dilemma: pull up to campus with 10 minutes to spare. Do we accept our fate, park in one of the many open spots on the outskirts of campus, and power walk to class? But, wait! \
         There's always that (small) chance there could be an open spot right next to the building we need to go to! And if that lot is full, there must be something closer, right? Attempting to get a closer spot means taking the risk of spending 8 of those 10 precious minutes stuck in traffic only to find there is nothing available. We're left \
         still having to park in Egypt but with the added bonus of being late for class. Ouch.</p> \
-        <div class='blog-image'><img width=400px; height=300px; src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/running-final.jpg'/><div class='description-box'><p class='image-desc'>Me running a mile to class after wasting 10 minutes trying to find a closer parking spot. 🏃🏼‍♂️💨</p></div></div>\
+        <div class='blog-image-container'><img class='blog-image' width=400px; height=300px; src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/running-final.jpg'/><div class='description-box'><p class='image-desc'>Me running a mile to class after wasting 10 minutes trying to find a closer parking spot. 🏃🏼‍♂️💨</p></div></div>\
          <p>This cold reality is what spurned the idea for my senior capstone project: <strong>Smart Lot</strong>, a (mostly) cheap and intelligent system that stores real-time information about parking lot availibility along with \
          a corresponding client application that will allow users to consume this availibility information in order to make better decisions on parking. The technical gist of the idea is as follows: </p> \
          <p><i>get a Raspberry Pi with an accompanying camera module, put it on the top of my school's Computer Science building, and have it send images of the parking lot to an API which then would use some type of object detection model to figure out where cars are in the image. If a detected object's bounding box overlaps with pixels that are determined to be within a spot, \
@@ -32,10 +32,10 @@ export class BlogService {
          <p>Well, the problem is that I'm certainly no expert in Data Science or Machine Learning. Granted, I'm no slouch either. I've passed two Data Mining classes and am mostly familiar with the innerworkings of a convolutional neural network when used for image classification and the steps carried out when \
           mining data (known as the KDD process), but I have never tackled a real-world problem like this before. And as programmers, we are all about reusing and repurposing code as opposed to reinventing the wheel. So, the search for an open-source, pre-trained model was on.</p>\
          <p>...To make a long story short, none of the open source object detection models I could find were anywhere near accurate enough for this use case. \
-         They just didn't lend themselves to the angles at which the images were being captured. Below is an image of the parking lot taken from the Raspberry Pi:</p> \
-         <div class='blog-image'><img width='300px' height='400px' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/rain.jpg'/><div class='description-box'><p class='image-desc'>A rainy day in Ruston, Louisiana. 🌧</p></div></div> \
+         They just didn't lend themselves to the angle at which the images were being captured. Below is an image of the parking lot taken from the Raspberry Pi:</p> \
+         <div class='blog-image-container'><img class='blog-image' width='300px' height='400px' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/rain.jpg'/><div class='description-box'><p class='image-desc'>A rainy day in Ruston, Louisiana. 🌧</p></div></div> \
          <p>As you can see, the view of the cars is not quite top-down but not quite head-on either; it is somewhere in between, and the two pre-trained models I found were only accurate when dealing with the two extremes. Of course, a fully top-down, bird's eye view of the lot would be ideal in all cases, as it would allow for all of the spots and vehicles to be uniform in size and angle. Capturing images at the angle \
-          shown above causes more than a few problems for an object detection model, all of which stemming from fact that both the size of the spots/vehicles and the angle at which they are captured change as you move towards the edges of the image. But, without roof-access to a <i>really </i> tall building adjacent to a parking lot on campus, I was forced into flexing my wrinkled, wet brain muscles and finding another solution. \
+          shown above causes more than a few problems for an object detection model, all of which stem from fact that both the size of the spots/vehicles and the angle at which they are captured change as you move towards the edges of the image. But, without roof-access to a <i>really </i> tall building adjacent to a parking lot on campus, I was forced into flexing my wrinkled, wet brain muscles and finding another solution. \
           </p>\
           <p>With the Pi on the roof, I knew that starting my own data collection process would be as easy as writing a script to automate the capturing and storing of an image and running said script every 30 minutes with a cron job. \
           The following BASH script (camera_script.sh) seemed to do the trick: </p> \
@@ -49,16 +49,45 @@ export class BlogService {
           </code> \
           </div> \
           </div> \
-          <p>And setting it to run every 30 minutes involved creating a crontab process by running <code class='inline-code'>crontab -e</code> command in the terminal, placing the following line into the editor, and saving the file:</p> \
+          <p>And setting it to run every 30 minutes involved creating a crontab process by running the <code class='inline-code'>crontab -e</code> command in the terminal, placing the following line into the editor, and saving the file:</p> \
           <div class='code-block-container'><div class='code-block'><code>*/30 * * * * /home/pi/camera_script.sh</code></div></div>\
+          <p>Soon enough, the lot images came pouring in. The next step was writing a script to extract new images of all fully visible parking spots from the main lot image. </p>\
          <p><i>To Be Continued...</i></p> \
          " 
+    },
+    {
+      date: 'April 6, 2019',
+      tags: 'Machine Learning, Data Science',
+      title: 'Collecting and Preprocessing Data for a Smart Parking System (Pt.2)',
+      readTime: '10min',
+      content: "<p>Okay, so we are at part 2! </p><p>Quick recap of where we left off last time: I want to build a smart parking system but I can't find any pre-trained models for vehicle detection that are accurate enough for my scenario (big sad). Do I give up, cry a little, and binge watch Game of Thrones in its entirity for the 6th time? No! Do I collect my own data and train my own model? Yes! On we go. 🚀</p> \
+      <p>As I mentioned at the end of the last post, I began collecting an image every 30 minutes. It was not long before I had more lot images than I knew what to do with: </p> \
+      <div class='blog-image-container'><img class='blog-image' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/lotsolots.png'><div class='description-box'><p class='image-desc'>Lots of lots on lots on lots...</p></div></div> \
+      <p>Keep in mind, the image above details a <strong>very</strong> small subset of the dataset that was collected. We're talking hundreds of lot images, each containing about 25 individual spots that would need to be extracted, labeled as either occupied or unoccupied, and saved as their own images. From hundreds of images comes thousands. Doing this manually would, of course, be an absolute nightmare much worse than those wherein you are being chased by a monster and you can't move your legs fast enough to run (just me?). \
+      I had neither the money nor the academic clout to acquire worker drones to do this tedious bit labor for me, so I was left with two options: do the work myself, or automate the entire process. I always choose automation.</p> \
+      <p>Using Python 3 as my weapon of choice, I began writing a script that would first iterate over an image of a lot and crop out each individual spot. Once again, the angle at which the images are being captured came back to haunt me, as it meant that the stride (or the value of pixels by which the crop box would need to be shifted to the right in order to move to the next spot) would need to be unique for each row. Also, the size of the crop box itself would need to be unique for each row, all due to the fact that the cars/spots grow in size as you scan down the image.   </p> \
+      "
+
 
 
 
     }
-
-
   ]
+
+  getBlog(title: string): BlogPost {
+    return this.blogPosts.find(blog => blog.title == title)
+  }
+
+  getBlogs(): BlogPost[] {
+    return this.blogPosts.reverse()
+  }
+}
+
+export interface BlogPost {
+  date: string
+  tags: string
+  title: string
+  readTime: string
+  content: string
 
 }

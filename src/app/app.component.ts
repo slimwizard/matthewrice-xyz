@@ -49,7 +49,7 @@ export class AppComponent {
   title = 'matthewrice-xyz';
 
   navLinks = [{route: '/about', label: "  About      "},
-              { route: '/blog', label: "Musings"},
+              { route: '/blog', label: "Blog    "},
               { route: '/contact', label: "Contact"},
               // ,
               // { route: '/blog', label: "Blog"}

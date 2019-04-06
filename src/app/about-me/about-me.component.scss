@@ -1,3 +1,7 @@
+#hi-text-3 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 #wave {
     display: inline-block;
     animation: wave .5s infinite linear;
@@ -78,6 +82,8 @@
     border-top: 5px #000000;
     margin-top: 0;
 
+  text-shadow: 3px 3px 3px rgb(24, 24, 24);
+
 }
 
 
@@ -88,8 +94,13 @@
 }
 
 #interests p {
-    margin-top: .5em;
+    margin: 0 auto;
+    
+    
+    max-width: 800px;
     font-weight: bold;
+    font-size: 20px;
+    
     color: rgb(255, 249, 249);
 
 }
@@ -119,9 +130,6 @@
     font-family: 'PT Serif', serif;
 }
 
-
-
-
 .top-grid {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
@@ -133,11 +141,25 @@
     display: grid;
     justify-items: center;
     align-items: center;
-
     grid-template-columns: repeat( auto-fit, minmax(330px, 1fr) );
 }
 
+
+
 .resume-grid {
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: .2fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "icon text"
+        "icon text";
+    justify-items: center;
+    align-items: center;
+}
+
+.github-grid {
+    padding-top: 20px;
     padding-left: 15px;
     display: grid;
     grid-template-columns: .2fr 2fr;
@@ -194,10 +216,19 @@
     text-shadow: 2px 1px 2px rgb(63, 63, 63);
     color: white;
     text-align:left;
+    margin-left: 15px;
+}
+
+.card-text-git {
+    margin-top: 20px;
+    text-shadow: 2px 1px 2px rgb(63, 63, 63);
+    color: white;
+    text-align:left;
 }
 mat-card {
     background: linear-gradient(to bottom , rgb(225, 225, 255) , rgb(174, 174, 255));
     width: 300px;
+    height: 120px;
     // background-color: rgb(225, 225, 255);
 }
 
@@ -210,7 +241,9 @@ ul {
 }
 
 li {
-    margin-left: -40px;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .tech-used {
@@ -226,6 +259,52 @@ li {
 
 }
 
+.bottom-grid-current {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat( auto-fit, minmax(420px, 1fr));
+}
+
+.current {
+//     border-style: solid;
+//   border-width: 1px;
+
+  height: 200px;
+  width: 420px;
+  text-align: left;
+}
+
+.current mat-divider {
+    width: 80%;
+}
+
+.current-title {
+    margin-bottom: -3px;
+}
+
+
+@media only screen 
+
+and (max-device-width : 1500px) 
+and (orientation : portrait) {
+    .bottom-grid-current {
+        margin: 0  1em;
+        margin-bottom: 10px;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    
+        grid-template-columns: repeat( auto-fit, minmax(330px, 1fr) );
+    }
+
+    .current {
+        border: none;
+    }
+
+}
 
 
 
@@ -236,11 +315,29 @@ and (max-device-width : 767px)
 and (orientation : portrait) {
 /* Styles */
 
+
+    .current {
+        width: 99%;
+        text-align: left;
+        border: none;
+        height: auto;
+    }
+
+    
     .tech-used {
-        margin-left: 4px;
+        margin: 1px;
+    }
+
+    .tech-button-container {
+        margin-top: 20px;
     }
 
     .bottom-grid {
+        margin:0;
+        margin-bottom: 10px;
+    }
+
+    .bottom-grid-current {
         margin:0;
         margin-bottom: 10px;
     }
@@ -251,6 +348,7 @@ and (orientation : portrait) {
 
     #hi-text {
         text-align: left;
+        margin-left: 20px;
     }
 
     #more-content {
@@ -289,7 +387,8 @@ and (orientation : portrait) {
     
 
     #interests p {
-        margin-top:1em;
+        margin:1em;
+        font-size: 18px;
     }
 
     #divider-container {
