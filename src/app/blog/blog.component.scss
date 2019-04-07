@@ -1,7 +1,7 @@
 
 #blog-page-content {
-    margin-left: 6em;
-    margin-right: 6em;
+    margin-left: 11em;
+    margin-right: 11em;
     margin-top: 2em;
     text-align: left;
 }
@@ -40,10 +40,14 @@
     border-radius: 4px;
     padding: 10px;
     align-content: center;
-    text-align: left;
+    max-width: 100%;
 }
 
 .inline-code {
+    background-color: rgb(243, 243, 243);
+}
+
+code {
     background-color: rgb(243, 243, 243);
 }
 
@@ -71,11 +75,34 @@ button {
     color: blue; 
 }
 
+pre, code {
+    max-width: 100%;
+}
 
+.blog-button-container {
+    margin-top: -15px;
+}
 
 @media only screen 
 
-and (max-device-width : 790px) 
+and (max-device-width : 3000px) 
+and (orientation : portrait) {
+    #blog-page-content {
+        margin-left: .5em;
+        margin-right: .5em;
+        margin-top: 1em;
+    }
+
+    .blog-button-container {
+        text-align: right;
+        margin-right: 1em;
+    }
+
+}
+
+@media only screen 
+
+and (max-device-width : 1000px) 
 and (orientation : portrait) {
     #blog-page-content {
         margin-left: .5em;

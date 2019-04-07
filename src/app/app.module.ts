@@ -8,6 +8,12 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { BlogComponent } from './blog/blog.component';
+import { PrismModule } from '@sgbj/angular-prism';
+ 
+import 'prismjs/prism';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-scss';
+import 'prismjs/components/prism-markup';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,8 @@ import { BlogComponent } from './blog/blog.component';
     MatToolbarModule,
     MatCardModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    PrismModule
   ],
   providers: [],
   bootstrap: [AppComponent]
