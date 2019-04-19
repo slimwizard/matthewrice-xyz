@@ -59,7 +59,7 @@ export class BlogService {
       date: 'April 6, 2019',
       tags: 'Machine Learning, Data Science',
       title: 'Collecting and Preprocessing Data for a Smart Parking System (Pt.2)',
-      readTime: '12min',
+      readTime: '10min',
       content: "<p>Quick recap of where we left off last time: I want to build a smart parking system but I can't find any pre-trained models for vehicle detection that are accurate enough for my scenario (big sad). Do I give up, cry a little, and binge watch Game of Thrones in its entirity for the 6th time? No! Do I collect my own data and train my own model? Yes! On we go. 🚀</p> \
       <p>As I mentioned at the end of the last post, I began collecting an image every 30 minutes so it was not long before I had more lot images than I knew what to do with: </p> \
       <div class='blog-image-container'><img class='blog-image' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/lotsolots.png'><div class='description-box'><p class='image-desc'>Lots of lots on lots on lots...</p></div></div> \
@@ -86,10 +86,10 @@ for each row: </br>\
     show spot </br>\
     wait for input </br>\
     if input is 'v' (for vehicle): </br>\
-      save as 'occupied_{occupied spots}.jpg' </br>\
+      save as 'occ/occupied_{occupied spots}.jpg' </br>\
       occupied spots ++ </br>\
     if input is not 'v': </br>\
-      save as 'unoccupied_{unoccupied spots}.jpg' </br>\
+      save as 'unocc/unoccupied_{unoccupied spots}.jpg' </br>\
       unoccupied spots ++ </br>\
     hide spot\
       </pre>\
@@ -98,7 +98,7 @@ for each row: </br>\
           </div> \
       </p> \
       <p>With this approach, the only work that would be required of me would essentially be letting the program cycle through each image and clicking 'v' if the spot being displayed is occupied or clicking the spacebar otherwise. \
-      For thousands of images this would still take some time, but exponentially less time than if I were to do all of this manually. To make this work with actual code I needed to import certain modules that allowed me to interact with my machine. The full import list is shown below:</p>\
+      For thousands of images this would still take some time, but exponentially less time than if I were to do all of this manually. To make this work with actual code I needed to import certain modules that would allow me to interact with my machine's operating system. The full import list is shown below:</p>\
       <div class='code-block'> \
           <code> \
           from PIL import Image </br>\
@@ -119,25 +119,21 @@ for each row: </br>\
           <code> \
           <pre> \
 for filename in os.listdir(image_path):</br>\
-  # ignore .DS_Store file used by MacOS</br>\
-  if filename=='.DS_Store': continue</br> \
-  lot = Image.open(f'{image_path}/{filename}').rotate(1)</br> \
-\
-  # ROW 1 CROPPING</br> \
-  crop_w = 200</br> \
-  crop_h = 250</br> \
-  start_x = 130</br> \
-  start_y = 794</br> \
-  stride_x = 190</br> \
-  row_1_spots=10</br> \
-  \
-  for i in range(row_1_spots):</br> \
-      spot = lot.crop((start_x,</br> \
-      start_y, start_x + crop_w,</br>\
-      start_y + crop_h))</br>\
-      start_x += stride_x</br>\
-      if i>3: start_y +=8</br>\
-      extract(spot)</br>\
+    # ignore .DS_Store file used by MacOS</br>\
+    if filename=='.DS_Store': continue</br>\
+    lot = Image.open(f'{image_path}/{filename}').rotate(1)</br>\
+    # ROW 1 CROPPING</br>\
+    crop_w = 200</br>\
+    crop_h = 250</br>\
+    start_x = 130</br>\
+    start_y = 794</br>\
+    stride_x = 190</br>\
+    row_1_spots=10</br>\
+    for i in range(row_1_spots):</br>\
+        spot = lot.crop((start_x, start_y, start_x + crop_w, start_y + crop_h))</br>\
+        start_x += stride_x</br>\
+        if i>3: start_y += 8</br>\
+        extract(spot)</br>\
       </pre>\
           </code> \
           </div> \
@@ -149,29 +145,29 @@ for filename in os.listdir(image_path):</br>\
           <code> \
           <pre> \
 def extract(spot): </br>\
-  global occupied_spots</br>\
-  global unoccupied_spots</br>\
-  spot.show()</br>\
-  subprocess.call('code')</br>\
-  while True:</br>\
-      key = ord(sys.stdin.read(1))</br>\
-      if key:</br>\
-          # 'v' key; occupied spot</br>\
-          if key==118:</br>\
-              save_image(True, spot)</br>\
-              occupied_spots+=1</br>\
-          # any other key; empty spot</br>\
-          elif key!=99:</br>\
-              save_image(False, spot)</br>\
-              unoccupied_spots+=1</br>\
-          kill_preview_proc()</br>\
-          break\
+    global occupied_spots</br>\
+    global unoccupied_spots</br>\
+    spot.show()</br>\
+    subprocess.call('code')</br>\
+    while True:</br>\
+        key = ord(sys.stdin.read(1))</br>\
+        if key:</br>\
+            # 'v' key; occupied spot</br>\
+            if key==118:</br>\
+                save_image(True, spot)</br>\
+                occupied_spots+=1</br>\
+            # any other key; empty spot</br>\
+            elif key!=118:</br>\
+                save_image(False, spot)</br>\
+                unoccupied_spots+=1</br>\
+            kill_preview_proc()</br>\
+            break\
       </pre>\
           </code> \
           </div> \
           </div> \
           <p>After working out the starting pixel coordinates, stride values, and bounding box size for the remaining rows, I was finally able to test out the script; and, hey, it worked like a charm! I had thousands of images of spots appropriately labeled and saved and all I had to do was tap a single key for each image (and write the script, of course...). The images below show some examples of the occupied and unoccupied spot images that were extracted:</p> \
-          <div class='blog-image-container'><img class='blog-image' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/occupied.png'><div class='description-box'><p class='image-desc'>occupied spots that were extracted 🚙</p></div></div> \
+          <div class='blog-image-container'><img class='blog-image' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/occupied.png'><div class='description-box'><p class='image-desc'>occupied spots that were extracted 🚙</p></div></div></br> \
           <div class='blog-image-container'><img class='blog-image' src='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/unoccupied.png'><div class='description-box'><p class='image-desc'>unoccupied spots that were extracted 🚫</p></div></div> \
           <p>Whew...that was kind of grueling, but now that it's done I can finally relax, right? WRONG! Now I have to train a machine learning model to recognize the difference between spots that are 'occupied' and spots that are 'unoccupied' using the newly extracted data, but I'll save those details for another post. </p> \
           <p>The full <code>extract_spots.py</code> script can be viewed <a href='https://s3.us-east-2.amazonaws.com/matthewrice-xyz/extract_spots.py'>here</a> (the Smart Lot project github is private for now). I'm sure it would not be difficult to manipulate the script so that it works for a similar use case. Also, I will be uploading the dataset to Kaggle once I'm done with the training process, at which point I will update this post with a link to the dataset; my hope is that others may find the images useful in some way.</p> \

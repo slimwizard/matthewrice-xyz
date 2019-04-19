@@ -27,8 +27,9 @@ export class AboutMeComponent implements OnInit {
 
   navigateTo(url) {
     window.location.href = url
-
   }
+
+  isNightMode =()=> document.getElementsByTagName('body')[0].classList.contains('night-mode')
 
   ngOnInit() {
     setTimeout(() => {

@@ -29,8 +29,6 @@
       
       
           </div>
-          <div style="margin: 1em" [innerHTML]="blog.content.substring(0, 300) + '...'"></div><div class="blog-button-container"><button style="color:rgb(137, 137, 255)" class="blog-secondary-info" mat-button (click)='selectBlog(blog.title)'>Continue Reading ></button></div>
-          
-    </div>
+          <div style="margin: 1em" [innerHTML]="blog.content.substring(0, 300) + '...'"></div><div class="blog-button-container"><button style="color:rgb(137, 137, 255)" class="blog-secondary-info" mat-button (click)='selectBlog(blog.title)'><span>Continue Reading ></span></button><div></div></div><div class="blog-header"><mat-divider></mat-divider></div>
   </div>
 </div>

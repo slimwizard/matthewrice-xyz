@@ -1,6 +1,6 @@
 <div class="main-content">
   <div id="hi-text">
-    <h3 id="hi-text-3" style="z-index: 2">     {{hello}} <span id="wave"><img class='emoji' src="../../assets/wave-emoji.png" style=" z-index: -2px;"></span></h3>
+    <h3 id="hi-text-3" style="z-index: 2">     {{hello}} <span id="wave"><img *ngIf='isNightMode()' class='emoji' src="../../assets/wave-emoji-dark.png" style=" z-index: -2px;"><img *ngIf='!isNightMode()' class='emoji' src="../../assets/wave-emoji.png" style=" z-index: -2px;"></span></h3>
     <!-- <h2 id="hi-text-2"> {{hello}} <span id="wave">👋</span></h2> -->
   </div>
 
@@ -46,25 +46,25 @@
   </div>
   <div class="bottom-grid-current">
       <div id="currently-reading" class="current">
-          <h2 class="current-title"><img src="../../assets/books-emoji.png" class="emoji">Reading:</h2>
+          <h2 class="current-title"><img *ngIf='!isNightMode()' src="../../assets/books-emoji.png" class="emoji"><img *ngIf='isNightMode()' src="../../assets/books-emoji-dark.png" class="emoji">Reading:</h2>
           <mat-divider></mat-divider>
           <!-- <h2>📚Currently Reading:</h2> -->
           <ul>
             <li><a href="https://www.amazon.com/Catcher-Rye-J-D-Salinger/dp/0316769487">> The Catcher in the Rye</a></li>
-            <li><a href="https://www.amazon.com/Serious-Python-Black-Belt-Deployment-Scalability/dp/1593278780/ref=sr_1_fkmrnull_1?keywords=Serious+Python%3A+Black-Belt+Advice+on+Deployment%2C+Scalability%2C+Testing%2C+and+More&qid=1554131337&s=books&sr=1-1-fkmrnull">> Serious Python: Black-Belt Advice on Deployment, Scalability, Testing, and More</a></li>
+            <li><a href="https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master-ebook/dp/B003GCTQAE">> The Pragmatic Programmer</a></li>
           </ul>
       </div>
       <div id="currently-reading" class="current">
-          <h2 class="current-title"><img class="current-title" src="../../assets/tv-emoji.png" class="emoji-tv"> Watching:</h2>
+          <h2 class="current-title"><img class="current-title" *ngIf='!isNightMode()' src="../../assets/tv-emoji.png" class="emoji-tv"><img class="current-title" *ngIf='isNightMode()' src="../../assets/tv-emoji-dark.png" class="emoji-tv"> Watching:</h2>
           <mat-divider></mat-divider>
           <!-- <h2>🎵Currently Jamming:</h2> -->
           <ul>
-            <li><a href="https://en.wikipedia.org/wiki/The_OA">> The OA</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Castle_Rock_(TV_series)">> Castle Rock</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Game_of_Thrones">> Game of Thrones</a></li>
           </ul>
       </div>
       <div id="currently-reading" class="current">
-          <h2 class="current-title"><img src="../../assets/music-note-emoji.png" class="emoji-note">Jamming:</h2>
+          <h2 class="current-title"><img *ngIf='!isNightMode()' src="../../assets/music-note-emoji.png" class="emoji-note"><img  *ngIf='isNightMode()'src="../../assets/music-note-emoji-dark.png" class="emoji-note">Jamming:</h2>
           <mat-divider></mat-divider>
           <!-- <h2>🎵Currently Jamming:</h2> -->
           <ul>

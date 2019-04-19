@@ -1,12 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import '~prismjs/themes/prism';
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+@import '~@angular/material/_theming.scss';
+$default-theme: mat-dark-theme(mat-palette($mat-green, A400), mat-palette($mat-light-blue, A400));
+@include mat-core();
+
+.night-mode {
+  @include angular-material-theme($default-theme);
+}
+
+.night-mode  code {
+  color: rgb(83, 83, 83)
+}
+
+.night-mode a {
+  color: rgb(205, 205, 255);
+}
+
+.night-mode #squiggle {
+  color: white;
+}
+
+
 
 h3, p, button, h5 {
     font-family: 'Roboto';
 }
-
-
 
 .roboto p, h2, h3, a, li {
   font-family: 'Roboto Mono', sans-serif;

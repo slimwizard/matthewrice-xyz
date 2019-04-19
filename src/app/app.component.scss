@@ -8,8 +8,8 @@
     width: 100px;
     height: 100px;
 
-    padding-top: 50px;
-    padding-left: 8px;
+    padding-top: 55px;
+    padding-left: 10px;
 }
 
 .header-title {
@@ -24,6 +24,11 @@
     // box-shadow: 4px 4px 4px rgb(226, 151, 151);
    
     font-family: 'Bowlby One SC', cursive;
+}
+
+#visibility-mode {
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
 .mat-tab-link {

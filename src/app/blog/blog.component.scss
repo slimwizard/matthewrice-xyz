@@ -1,7 +1,7 @@
 
 #blog-page-content {
-    margin-left: 11em;
-    margin-right: 11em;
+    margin-left: 14em;
+    margin-right: 14em;
     margin-top: 2em;
     text-align: left;
 }
@@ -41,6 +41,7 @@
     padding: 10px;
     align-content: center;
     max-width: 100%;
+    overflow-x: scroll;
 }
 
 .inline-code {
@@ -83,6 +84,19 @@ pre, code {
     margin-top: -15px;
 }
 
+.blog-button-container span {
+    background-image: -webkit-linear-gradient(left, rgb(161, 151, 255), #585858, #fff); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(left, rgb(161, 151, 255), #585858, #fff);; /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(left, rgb(161, 151, 255), #585858, #fff);; /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(left, rgb(161, 151, 255), #585858, #fff);; /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to right,rgb(164, 108, 255), rgb(94, 153, 255)); /* Standard syntax; must be last */
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+
 @media only screen 
 
 and (max-device-width : 3000px) 
@@ -112,7 +126,7 @@ and (orientation : portrait) {
 
     .blog-button-container {
         text-align: right;
-        margin-right: 1em;
+        margin-right: 1.5em;
     }
 
 }
