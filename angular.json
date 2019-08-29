@@ -29,7 +29,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [ "/Users/mrice/Documents/Test_Dev/matthewrice-xyz/node_modules/prismjs/prism.js"],
+            "scripts": [ "/Users/mrice/Workspace/matthewrice-xyz/node_modules/prismjs/prism.js"],
             "es5BrowserSupport": true
           },
           "configurations": {
